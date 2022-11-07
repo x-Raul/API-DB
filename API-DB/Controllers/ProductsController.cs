@@ -17,10 +17,10 @@ namespace API_DB.Controllers
 
         //Leer
         [HttpGet]
-        public async Task<ActionResult<List<Producto>>> Get()
+        public async Task<ActionResult<List<Producto1>>> Get()
         {
             //Query
-            //Select prod_id,prod_nom,prod_desc,Cat_Fk, Cat_nom, cat_desc from Producto P Inner join Categoria C on P.Cat_Id = P.Cat_Fk
+            //Select prod_id,prod_nom,prod_desc,Cat_Fk, Cat_nom, --cat_desc--- from Producto P Inner join Categoria C on C.Cat_Id = P.Cat_Fk
 
 
             return Ok(await _context.Productos.FromSqlRaw("Select prod_id,prod_nom,prod_desc,Cat_Fk, Cat_nom, cat_desc from Producto P Inner join Categoria C on C.Cat_Id = P.Cat_Fk").ToListAsync());
