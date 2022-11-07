@@ -20,6 +20,7 @@ namespace API_DB.Controllers
         public async Task<ActionResult<List<Categorium>>> Get()
         {
             //return Ok(await _context.Categoria.ToListAsync());
+            
             return Ok(await _context.Categoria.ToListAsync());
         }
 
