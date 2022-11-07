@@ -36,7 +36,7 @@ namespace API_DB.Controllers
 
         //Crear
         [HttpPost]
-        public async Task<ActionResult<List<Producto>>> Post([Bind("ProdId,ProdNom,ProdDesc,CatFk")] Producto producto)
+        public async Task<ActionResult<List<Producto>>> Post([FromBody] Producto producto)
         {
             _context.Productos.Add(producto);
             await _context.SaveChangesAsync();
@@ -47,7 +47,7 @@ namespace API_DB.Controllers
 
         //Actualizar
         [HttpPut]
-        public async Task<ActionResult<List<Producto>>> Update([Bind("ProdId,ProdNom,ProdDesc,CatFk")] Producto update)
+        public async Task<ActionResult<List<Producto>>> Update([FromBody] Producto update)
         {
 
             var dbProducto = await _context.Productos.FindAsync(update.ProdId);

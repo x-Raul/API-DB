@@ -19,7 +19,7 @@ namespace API_DB.Controllers
         [HttpGet]
         public async Task<ActionResult<List<Categorium>>> Get()
         {
-            //return Ok(await _context.Productos.ToListAsync());
+            //return Ok(await _context.Categoria.ToListAsync());
             return Ok(await _context.Categoria.ToListAsync());
         }
 
@@ -36,7 +36,7 @@ namespace API_DB.Controllers
 
         //Crear
         [HttpPost]
-        public async Task<ActionResult<List<Categorium>>> Post([Bind("Ola,aaaa,aaaaaa")] Categorium categoria)
+        public async Task<ActionResult<List<Categorium>>> Post([FromBody] Categorium categoria)
         {
             _context.Categoria.Add(categoria);
             await _context.SaveChangesAsync();
@@ -47,7 +47,7 @@ namespace API_DB.Controllers
 
         //Actualizar
         [HttpPut]
-        public async Task<ActionResult<List<Categorium>>> Update([Bind("CatId,CatNom,CatDesc")] Categorium update)
+        public async Task<ActionResult<List<Categorium>>> Update([FromBody] Categorium update)
         {
 
             var dbCategoria = await _context.Categoria.FindAsync(update.CatId);
