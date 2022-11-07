@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text.Json.Serialization;
 
 namespace API_DB.Models
 {
@@ -7,13 +8,14 @@ namespace API_DB.Models
     {
         public Categorium()
         {
-            Productos = new HashSet<Producto>();
+           //Productos = new HashSet<Producto>();
         }
 
         public int CatId { get; set; }
         public string CatNom { get; set; } = null!;
         public string? CatDesc { get; set; }
 
-        public virtual ICollection<Producto> Productos { get; set; }
+        //public virtual ICollection<Producto> Productos { get; set; }
+
     }
 }

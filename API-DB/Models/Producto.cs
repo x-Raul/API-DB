@@ -10,6 +10,6 @@ namespace API_DB.Models
         public string? ProdDesc { get; set; }
         public int CatFk { get; set; }
 
-        public virtual Categorium CatFkNavigation { get; set; } = null!;
+        //public virtual Categorium CatFkNavigation { get; set; } = null!;
     }
 }

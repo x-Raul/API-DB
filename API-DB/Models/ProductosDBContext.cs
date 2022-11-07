@@ -67,11 +67,11 @@ namespace API_DB.Models
                     .IsUnicode(false)
                     .HasColumnName("Prod_Nom");
 
-                entity.HasOne(d => d.CatFkNavigation)
+               /* entity.HasOne(d => d.CatFkNavigation)
                     .WithMany(p => p.Productos)
                     .HasForeignKey(d => d.CatFk)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_Producto_Categoria");
+                    .HasConstraintName("FK_Producto_Categoria");*/
             });
 
             OnModelCreatingPartial(modelBuilder);
